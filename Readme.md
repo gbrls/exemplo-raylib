@@ -32,8 +32,8 @@
             SET CC=gcc
             SET CFLAGS=$(RAYLIB_PATH)\raylib\src\raylib.rc.data -s -static -O2 -std=c99 -Wall -Iexternal -I$(RAYLIB_PATH)/src -DPLATFORM_DESKTOP
             SET LDFLAGS=-lraylib -lopengl32 -lgdi32 -lwinmm
-            cd ../$(CURRENT_DIRECTORY)
-            cd ./bin
+            cd $(CURRENT_DIRECTORY)
+            cd ../bin
             echo
             echo > Clean latest build
             echo ------------------------
@@ -54,6 +54,8 @@
             echo
             echo > Execute program
             echo -----------------------
+            cd $(CURRENT_DIRECTORY)
+            cd ../bin
             cmd /c IF EXIST $(NAME_PART).exe $(NAME_PART).exe
         ```  
         Salve, com o nome que desejar, aperte em ok e pronto! Seu jogo irá compilar!
